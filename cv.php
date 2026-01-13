@@ -12,12 +12,12 @@
             <form action="">
             <div class="info">
                 <h1>Informations général :</h1>
-                <input class="nom" id="nom" type="text" name="nom" onkeyup="document.getElementById('nom-preview').innerHTML = this.value">
-                <input class="prenom" id="prenom" type="text" name="prenom" onkeyup="document.getElementById('prenom-preview').innerHTML = this.value">
-                <input class="title" id="title" type="text" name="title" onkeyup="document.getElementById('title-preview').innerHTML = this.value">
-                <input class="mail" id="mail" type="text" name="mail" onkeyup="document.getElementById('mail-preview').innerHTML = this.value">
-                <input class="phone" id="phone" type="text" name="phone" onkeyup="document.getElementById('tel-preview').innerHTML = this.value">
-                <textarea class="desc" id="desc" name="desc" onkeyup="document.getElementById('desc-preview').innerHTML = this.value"></textarea>
+                <input class="nom" id="nom" type="text" name="nom" oninput="document.getElementById('nom-preview').innerHTML = this.value">
+                <input class="prenom" id="prenom" type="text" name="prenom" oninput="document.getElementById('prenom-preview').innerHTML = this.value">
+                <input class="title" id="title" type="text" name="title" oninput="document.getElementById('title-preview').innerHTML = this.value">
+                <input class="mail" id="mail" type="text" name="mail" oninput="document.getElementById('mail-preview').innerHTML = this.value">
+                <input class="phone" id="phone" type="text" name="phone" oninput="document.getElementById('tel-preview').innerHTML = this.value">
+                <textarea class="desc" id="desc" name="desc" oninput="document.getElementById('desc-preview').innerHTML = this.value"></textarea>
             </div>
             <div id="comp" class="competences">
                 <h1>Compétences :</h1>
@@ -28,8 +28,8 @@
                 <h1>Expériences professionelles :</h1>
                 <input class="nom-poste" id="nom-poste" type="text">
                 <input class="nom-entreprise" id="nom-entreprise" type="text">
-                <input class="exp-date" id="exp-date" type="text">
-                <input class="exp-date-fin" id="exp-date-fin" type="text">
+                <input class="exp-date" id="exp-date" type="date">
+                <input class="exp-date-fin" id="exp-date-fin" type="date">
                 <textarea name="exp" id="desc-exp"></textarea>
                 <button id="exp-button" type="button" onclick="addExp()" >Ajouter</button>
             </div>
@@ -37,8 +37,8 @@
                 <h1>Formations :</h1>
                 <input class="nom-formations" id="nom-formations" type="text">
                 <input class="etab" id="etab" type="text">
-                <input class="form-date" id="form-date" type="text">
-                <input class="form-date-fin" id="form-date-fin" type="text">
+                <input class="form-date" id="form-date" type="date">
+                <input class="form-date-fin" id="form-date-fin" type="date">
                 <textarea class="desc-form" id="desc-form" name="forma" id="desc-formation"></textarea>
                 <button type="button" onclick="addForm()" >Ajouter</button>
             </div>
