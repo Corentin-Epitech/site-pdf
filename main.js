@@ -4,7 +4,7 @@ button = document.getElementById("comp-button")
 function addComp() {
     Input = document.getElementById("comp-input")
     newContent = document.createTextNode(Input.value);
-    parentDiv = document.getElementById("comp");
+    parentDiv = document.getElementById("preview");
     newDiv = document.createElement("p");
     newDiv.classList.add("comp-list")
     newDiv.appendChild(newContent);
@@ -12,7 +12,7 @@ function addComp() {
 }
 
 function addExp() {
-    parentDiv = document.getElementById("experiences")
+    parentDiv = document.getElementById("preview")
     newDiv = document.createElement("div")
     newDiv.classList.add("exp-list")
 
@@ -50,7 +50,7 @@ function addExp() {
 }
 
 function addForm() {
-    parentDiv = document.getElementById("formations")
+    parentDiv = document.getElementById("preview")
     newDiv = document.createElement("div")
     newDiv.classList.add("form-list")
 
@@ -86,3 +86,8 @@ function addForm() {
 
     parentDiv.appendChild(newDiv)
 }
+
+input = document.getElementById("nom")
+title = document.getElementById("title")
+
+input.addEventListener("keyup", () => title.innerHTML = input.value)

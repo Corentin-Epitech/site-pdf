@@ -12,12 +12,12 @@
             <form action="">
             <div class="info">
                 <h1>Informations général :</h1>
-                <input class="nom" type="text" name="nom">
-                <input class="prenom" type="text" name="prenom">
-                <input class="title" type="text" name="title">
-                <input class="mail" type="text" name="mail">
-                <input class="phone" type="text" name="phone">
-                <textarea class="desc" name="desc"></textarea>
+                <input class="nom" id="nom" type="text" name="nom" onkeyup="document.getElementById('nom-preview').innerHTML = this.value">
+                <input class="prenom" id="prenom" type="text" name="prenom" onkeyup="document.getElementById('prenom-preview').innerHTML = this.value">
+                <input class="title" id="title" type="text" name="title" onkeyup="document.getElementById('title-preview').innerHTML = this.value">
+                <input class="mail" id="mail" type="text" name="mail" onkeyup="document.getElementById('mail-preview').innerHTML = this.value">
+                <input class="phone" id="phone" type="text" name="phone" onkeyup="document.getElementById('tel-preview').innerHTML = this.value">
+                <textarea class="desc" id="desc" name="desc" onkeyup="document.getElementById('desc-preview').innerHTML = this.value"></textarea>
             </div>
             <div id="comp" class="competences">
                 <h1>Compétences :</h1>
@@ -45,6 +45,18 @@
             <button type="submit">Valider</button>
             </form>
         </div>
+
+
+        <div id="preview">
+            <h1 id="nom-preview"></h1>
+            <h2 id="prenom-preview"></h2>
+            <h3 id="title-preview"></h3>
+            <p id="mail-preview"></p>
+            <p id="tel-preview"></p>
+            <p id="desc-preview"></p>
+        </div>
         <script src="main.js"></script>
+
+        
     </body>
 </html>
