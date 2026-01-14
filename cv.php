@@ -9,7 +9,7 @@
     </head>
     <body>
         <div id="form" class="form">
-            <form action="">
+            <form action="export.php" method="post">
             <div class="info">
                 <h1>Informations général :</h1>
                 <input class="nom" id="nom" type="text" name="nom" oninput="document.getElementById('nom-preview').innerHTML = this.value">
@@ -19,9 +19,9 @@
                 <input class="phone" id="phone" type="text" name="phone" oninput="document.getElementById('tel-preview').innerHTML = this.value">
                 <textarea class="desc" id="desc" name="desc" oninput="document.getElementById('desc-preview').innerHTML = this.value"></textarea>
             </div>
-            <div id="comp" class="competences">
+            <div id="comp" class="competences" name="competences">
                 <h1>Compétences :</h1>
-                <input class="comp" type="text" id="comp-input" required>
+                <input name="competences[]comp" class="comp" type="text" id="comp-input">
                 <button type="button" id="comp-button" onclick="addComp()">Ajouter</button>
             </div>
             <div id="experiences" class="exp">
@@ -47,12 +47,20 @@
         </div>
 
         <div id="preview">
-            <h1 id="nom-preview"></h1>
-            <h2 id="prenom-preview"></h2>
-            <h3 id="title-preview"></h3>
-            <p id="mail-preview"></p>
-            <p id="tel-preview"></p>
-            <p id="desc-preview"></p>
+            <div class="Basic-info">
+                <h1 id="nom-preview"></h1>
+                <h2 id="prenom-preview"></h2>
+                <h3 id="title-preview"></h3>
+                <p id="mail-preview"></p>
+                <p id="tel-preview"></p>
+                <p id="desc-preview"></p>
+            </div>
+            <h1>Compétences:</h1>
+            <div id="preview-comp"></div>
+            <h1>Expériences:</h1>
+            <div id="preview-experiences"></div>
+            <h1>Formations</h1>
+            <div id="preview-formations"></div>
         </div>
         <script src="main.js"></script>
 

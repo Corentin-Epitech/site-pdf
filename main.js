@@ -1,7 +1,7 @@
 function addComp() {
     Input = document.getElementById("comp-input")
     newContent = document.createTextNode(Input.value);
-    parentDiv = document.getElementById("preview");
+    parentDiv = document.getElementById("preview-comp");
     newDiv = document.createElement("p");
     newDiv.classList.add("comp-list")
     newDiv.appendChild(newContent);
@@ -11,7 +11,7 @@ function addComp() {
 counter = 0
 
 function addExp() {
-    parentDiv = document.getElementById("preview")
+    parentDiv = document.getElementById("preview-experiences")
     newDiv = document.createElement("div")
     counter += 1;
     newDiv.classList.add("exp-list")
@@ -55,7 +55,7 @@ function addExp() {
 }
 
 function addForm() {
-    parentDiv = document.getElementById("preview")
+    parentDiv = document.getElementById("preview-formations")
     newDiv = document.createElement("div")
     newDiv.classList.add("form-list")
 

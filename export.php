@@ -9,5 +9,19 @@ use Dompdf \ Dompdf ;
     <title>Document</title>
 </head>
 <body>
+    <?php echo $_POST["nom"]; ?>
+    <?php echo $_POST["prenom"]; ?>
+    <?php echo $_POST["title"]; ?>
+    <?php echo $_POST["mail"]; ?>
+    <?php echo $_POST["phone"]; ?>
+    <?php echo $_POST["desc"]; ?>
+
+    <?php $competences = $_POST["competences"];
+    
+    foreach ($competences as $item) {
+        var_dump($item);
+    }
+    ?>
+
 </body>
 </html>
