@@ -1,6 +1,3 @@
-
-button = document.getElementById("comp-button")
-
 function addComp() {
     Input = document.getElementById("comp-input")
     newContent = document.createTextNode(Input.value);
@@ -11,10 +8,14 @@ function addComp() {
     parentDiv.appendChild(newDiv)
 }
 
+counter = 0
+
 function addExp() {
     parentDiv = document.getElementById("preview")
     newDiv = document.createElement("div")
+    counter += 1;
     newDiv.classList.add("exp-list")
+    newDiv.setAttribute('id','exp-list-' + counter)
 
     Input = document.getElementById("nom-poste")
     newItem = document.createElement("h2")
@@ -45,6 +46,10 @@ function addExp() {
     newContent = document.createTextNode(Input.value)
     newItem.appendChild(newContent)
     newDiv.appendChild(newItem)
+
+    button = document.createElement("button")
+    button.onclick = function() {this.parentNode.remove()}
+    newDiv.appendChild(button)
 
     parentDiv.appendChild(newDiv)
 }
@@ -84,10 +89,11 @@ function addForm() {
     newItem.appendChild(newContent)
     newDiv.appendChild(newItem)
 
+    button = document.createElement("button")
+    button.onclick = function() {this.parentNode.remove()}
+    newDiv.appendChild(button)
+
     parentDiv.appendChild(newDiv)
 }
 
-input = document.getElementById("nom")
-title = document.getElementById("title")
 
-input.addEventListener("keyup", () => title.innerHTML = input.value)

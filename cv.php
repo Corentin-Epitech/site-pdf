@@ -46,7 +46,6 @@
             </form>
         </div>
 
-
         <div id="preview">
             <h1 id="nom-preview"></h1>
             <h2 id="prenom-preview"></h2>
