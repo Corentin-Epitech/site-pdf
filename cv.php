@@ -21,8 +21,16 @@
             </div>
             <div id="comp" class="competences" name="competences">
                 <h1>Compétences :</h1>
-                <input name="competences[]comp" class="comp" type="text" id="comp-input">
-                <button type="button" id="comp-button" onclick="addComp()">Ajouter</button>
+                <div>
+                    <input name="comp[]" class="comp" type="text" id="comp-input">
+                    <select name="comp[]" class="comp" id="level">
+                        <option value="novice">Novice</option>
+                        <option value="intermédiaire">Intermédiaire</option>
+                        <option value="confirmé">Confirmé</option>
+                        <option value="Expert">Expert</option>
+                    </select>
+                    <button type="button" id="comp-button" onclick="addComp()">Ajouter</button>
+                </div>
             </div>
             <div id="experiences" class="exp">
                 <h1>Expériences professionelles :</h1>
@@ -56,7 +64,8 @@
                 <p id="desc-preview"></p>
             </div>
             <h1>Compétences:</h1>
-            <div id="preview-comp"></div>
+            <div id="preview-comp" name="test">
+            </div>
             <h1>Expériences:</h1>
             <div id="preview-experiences"></div>
             <h1>Formations</h1>

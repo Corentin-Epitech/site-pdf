@@ -16,10 +16,10 @@ use Dompdf \ Dompdf ;
     <?php echo $_POST["phone"]; ?>
     <?php echo $_POST["desc"]; ?>
 
-    <?php $competences = $_POST["competences"];
-    
+    <?php $competences = $_POST["comp"] ?? [];
+    var_dump( $competences );
     foreach ($competences as $item) {
-        var_dump($item);
+        echo $item;
     }
     ?>
 

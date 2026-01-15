@@ -1,14 +1,80 @@
+counter = 0
+
 function addComp() {
+    counter += 1
+    parentDiv = document.getElementById("preview-comp");
+    // Tentative d'opti du code , revenir plus tard : 
+    // boite = document.getElementsByClassName("comp")
+    // Array.from(boite).forEach(
+    //     function (item) {
+    //         parentDiv = document.getElementById("preview-comp");
+    //         Input = document.getElementById(item.id)
+    //         newContent = document.createTextNode(Input.value);
+    //         newDiv = document.createElement("div");
+    //         newDiv.setAttribute("class","preview-comp-" + counter)
+    //         newElement = document.createElement("p")
+    //         newElement.appendChild(newContent);
+    //         newDiv.appendChild(newElement)
+    //         parentDiv.appendChild(newDiv)
+    //         parentDiv = document.getElementById("comp")
+    //         newDiv = document.createElement("div")
+    //         newDiv.setAttribute("class","clone-comp-" + counter)
+    //         element = document.getElementById(item.id)
+    //         clone = element.cloneNode(true)
+    //         clone.setAttribute('id','comp-input-' + counter)
+    //         clone.setAttribute('class','comp-' + counter)
+    //         clone.selectedIndex = element.selectedIndex
+    //         newDiv.appendChild(clone)
+    //         parentDiv.appendChild(newDiv)
+    //     }
+    // )
+    //     button = document.createElement("button")
+    //     button.setAttribute("type","button")
+    //     button.onclick = function() {box = document.getElementsByClassName(this.parentNode.className); Array.from(box).forEach(function (item) {item.remove()}) }
+    //     newDiv.appendChild(button)
+
+
     Input = document.getElementById("comp-input")
     newContent = document.createTextNode(Input.value);
-    parentDiv = document.getElementById("preview-comp");
-    newDiv = document.createElement("p");
-    newDiv.classList.add("comp-list")
-    newDiv.appendChild(newContent);
+    newDiv = document.createElement("div");
+    newDiv.setAttribute("class","comp-" + counter)
+    newElement = document.createElement("p")
+    newElement.setAttribute('id','comp-'+ counter)
+    newElement.appendChild(newContent);
+    newDiv.appendChild(newElement)
+
+    Input = document.getElementById("level")
+    newContent = document.createTextNode(Input.value);
+    newElement = document.createElement("p")
+    newElement.setAttribute('id','select-'+ counter)
+    newElement.appendChild(newContent);
+    newDiv.appendChild(newElement)
     parentDiv.appendChild(newDiv)
+
+    parentDiv = document.getElementById("comp")
+    newDiv = document.createElement("div")
+    newDiv.setAttribute("class","comp-" + counter)
+    element = document.getElementById("comp-input")
+    clone = element.cloneNode(true)
+    clone.setAttribute('id','comp-input-' + counter)
+    clone.setAttribute('oninput',"document.getElementById('comp-"+ counter + "').innerHTML = this.value")
+    newDiv.appendChild(clone)
+    element = document.getElementById("level")
+    clone = element.cloneNode(true)
+    clone.setAttribute('id','level-' + counter)
+    clone.selectedIndex = element.selectedIndex
+    clone.setAttribute('oninput',"document.getElementById('select-"+ counter + "').innerHTML = this.value")
+    newDiv.appendChild(clone)
+
+    button = document.createElement("button")
+    button.setAttribute("type","button")
+    button.onclick = function() {box = document.getElementsByClassName(this.parentNode.className); Array.from(box).forEach(function (item) {item.remove()}) }
+    newDiv.appendChild(button)
+    parentDiv.appendChild(newDiv)
+
 }
 
-counter = 0
+
 
 function addExp() {
     parentDiv = document.getElementById("preview-experiences")
