@@ -1,26 +1,13 @@
-require 'vendor / autoload . php ';
-use Dompdf \ Dompdf ;
+<?php
+    require 'vendor/autoload.php';
+    use Dompdf\Dompdf;
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <?php echo $_POST["nom"]; ?>
-    <?php echo $_POST["prenom"]; ?>
-    <?php echo $_POST["title"]; ?>
-    <?php echo $_POST["mail"]; ?>
-    <?php echo $_POST["phone"]; ?>
-    <?php echo $_POST["desc"]; ?>
+    $test = $_POST["test"]; 
 
-    <?php $competences = $_POST["comp"] ?? [];
-    foreach ($competences as $item) {
-        echo $item;
-    }
-    ?>
-
-</body>
-</html>
+            // le contenu de cv. php est inséré dans la variable html
+    $pdf = new Dompdf() ; // création du pdf
+    $pdf -> loadHtml() ($test ); // chargement du contenu dans Dompdf
+    $pdf -> setPaper('A4 ') ; // configuration du format
+    $pdf -> render() ; // rendu du pdf
+    $pdf -> stream() ; // envoi au navigateur
+?>

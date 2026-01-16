@@ -22,8 +22,8 @@
             <h1>Compétences :</h1>
             <div id="comp" class="competences" name="competences">
                 <div>
-                    <input name="comp[]" class="comp" type="text" id="comp-input" maxlength="20">
-                    <select name="comp[]" class="comp" id="level">
+                    <input name="comp" class="comp" type="text" id="comp-input" maxlength="20">
+                    <select name="comp" class="comp" id="level">
                         <option value="novice">Novice</option>
                         <option value="intermédiaire">Intermédiaire</option>
                         <option value="confirmé">Confirmé</option>
@@ -39,7 +39,7 @@
                     <input class="nom-entreprise" id="nom-entreprise-input" type="text" maxlength="35">
                     <input class="exp-date" id="exp-date-input" type="date">
                     <input class="exp-date-fin" id="exp-date-fin-input" type="date">
-                    <textarea name="exp" id="desc-exp-input"maxlength="500"></textarea>
+                    <textarea  id="desc-exp-input"maxlength="500"></textarea>
                     <button id="exp-button" type="button" onclick="addExp()" >Ajouter</button>
                 </div>
             </div>
@@ -55,27 +55,31 @@
                     <button type="button" onclick="addForm()" >Ajouter</button>
                 </div>
             </div>
-            <button type="submit">Valider</button>
+            <button type="submit" onclick="addValue()">Valider</button>
+
+            <input type="hidden" name="test" id="hidden-input">
+            <div id="preview">
+                <div class="Basic-info">
+                    <h1 id="nom-preview"></h1>
+                    <h2 id="prenom-preview"></h2>
+                    <h3 id="title-preview"></h3>
+                    <p id="mail-preview"></p>
+                    <p id="tel-preview"></p>
+                    <p id="desc-preview"></p>
+                </div>
+                    <h1>Compétences:</h1>
+                <div id="preview-comp" name="test">
+                </div>
+                    <h1>Expériences:</h1>
+                <div id="preview-experiences"></div>
+                    <h1>Formations</h1>
+                <div id="preview-formations"></div>
+            </div> </input>
+                
             </form>
         </div>
 
-        <div id="preview">
-            <div class="Basic-info">
-                <h1 id="nom-preview"></h1>
-                <h2 id="prenom-preview"></h2>
-                <h3 id="title-preview"></h3>
-                <p id="mail-preview"></p>
-                <p id="tel-preview"></p>
-                <p id="desc-preview"></p>
-            </div>
-            <h1>Compétences:</h1>
-            <div id="preview-comp" name="test">
-            </div>
-            <h1>Expériences:</h1>
-            <div id="preview-experiences"></div>
-            <h1>Formations</h1>
-            <div id="preview-formations"></div>
-        </div>
+        
         <script src="main.js"></script>
 
         

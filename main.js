@@ -30,11 +30,13 @@ function addComp() {
     element = document.getElementById("comp-input")
     clone = element.cloneNode(true)
     clone.setAttribute('id','comp-input-' + counter)
+    clone.setAttribute('name','comp[]')
     clone.setAttribute('oninput',"document.getElementById('comp-"+ counter + "').innerHTML = this.value")
     newDiv.appendChild(clone)
     element = document.getElementById("level")
     clone = element.cloneNode(true)
     clone.setAttribute('id','level-' + counter)
+    clone.setAttribute('name','comp[]')
     clone.selectedIndex = element.selectedIndex
     clone.setAttribute('oninput',"document.getElementById('select-"+ counter + "').innerHTML = this.value")
     newDiv.appendChild(clone)
@@ -137,30 +139,35 @@ function addExp() {
     element = document.getElementById("nom-poste-input")
     clone = element.cloneNode(true)
     clone.setAttribute('id','nom-poste-input-' + counter)
+    clone.setAttribute('name','exp[]')
     clone.setAttribute('oninput',"document.getElementById('nom-poste-"+ counter + "').innerHTML = this.value")
     newDiv.appendChild(clone)
 
     element = document.getElementById("nom-entreprise-input")
     clone = element.cloneNode(true)
     clone.setAttribute('id','nom-entreprise-input-' + counter)
+    clone.setAttribute('name','exp[]')
     clone.setAttribute('oninput',"document.getElementById('nom-entreprise-"+ counter + "').innerHTML = this.value")
     newDiv.appendChild(clone)
 
     element = document.getElementById("exp-date-input")
     clone = element.cloneNode(true)
     clone.setAttribute('id','exp-date-input-' + counter)
+    clone.setAttribute('name','exp[]')
     clone.setAttribute('oninput',"document.getElementById('exp-date-"+ counter + "').innerHTML = this.value")
     newDiv.appendChild(clone)
 
     element = document.getElementById("exp-date-fin-input")
     clone = element.cloneNode(true)
     clone.setAttribute('id','exp-date-fin-input-' + counter)
+    clone.setAttribute('name','exp[]')
     clone.setAttribute('oninput',"document.getElementById('exp-date-fin-"+ counter + "').innerHTML = this.value")
     newDiv.appendChild(clone)
 
     element = document.getElementById("desc-exp-input")
     clone = element.cloneNode(true)
     clone.setAttribute('id','desc-exp-input-' + counter)
+    clone.setAttribute('name','exp[]')
     clone.setAttribute('oninput',"document.getElementById('desc-exp-"+ counter + "').innerHTML = this.value")
     newDiv.appendChild(clone)
 
@@ -229,30 +236,35 @@ function addForm() {
     element = document.getElementById("nom-formations-input")
     clone = element.cloneNode(true)
     clone.setAttribute('id','nom-formations-input-' + counter)
+    clone.setAttribute('name','form[]')
     clone.setAttribute('oninput',"document.getElementById('nom-formations-"+ counter + "').innerHTML = this.value")
     newDiv.appendChild(clone)
 
     element = document.getElementById("etab-input")
     clone = element.cloneNode(true)
     clone.setAttribute('id','etab-input-' + counter)
+    clone.setAttribute('name','form[]')
     clone.setAttribute('oninput',"document.getElementById('etab-"+ counter + "').innerHTML = this.value")
     newDiv.appendChild(clone)
 
     element = document.getElementById("form-date-input")
     clone = element.cloneNode(true)
     clone.setAttribute('id','form-date-input-' + counter)
+    clone.setAttribute('name','form[]')
     clone.setAttribute('oninput',"document.getElementById('form-date-"+ counter + "').innerHTML = this.value")
     newDiv.appendChild(clone)
 
     element = document.getElementById("exp-date-fin-input")
     clone = element.cloneNode(true)
     clone.setAttribute('id','exp-date-fin-input-' + counter)
+    clone.setAttribute('name','form[]')
     clone.setAttribute('oninput',"document.getElementById('form-date-fin-"+ counter + "').innerHTML = this.value")
     newDiv.appendChild(clone)
 
     element = document.getElementById("desc-form-input")
     clone = element.cloneNode(true)
     clone.setAttribute('id','desc-form-input-' + counter)
+    clone.setAttribute('name','form[]')
     clone.setAttribute('oninput',"document.getElementById('desc-form-"+ counter + "').innerHTML = this.value")
     newDiv.appendChild(clone)
 
@@ -269,3 +281,9 @@ function addForm() {
 }
 
 
+function addValue() {
+    value = document.getElementById("preview")
+    console.log(value)
+    input = document.getElementById("hidden-input")
+    input.setAttribute('value', value)
+}
