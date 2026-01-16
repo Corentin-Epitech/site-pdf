@@ -17,7 +17,6 @@ use Dompdf \ Dompdf ;
     <?php echo $_POST["desc"]; ?>
 
     <?php $competences = $_POST["comp"] ?? [];
-    var_dump( $competences );
     foreach ($competences as $item) {
         echo $item;
     }
