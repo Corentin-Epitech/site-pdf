@@ -1,5 +1,6 @@
 {
     "require": {
-        "dompdf/dompdf": "^0.6.2"
+        "dompdf/dompdf": "^3.1",
+        "dnru/php-font-lib": "^0.5.2"
     }
 }

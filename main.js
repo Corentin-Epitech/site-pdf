@@ -283,7 +283,8 @@ function addForm() {
 
 function addValue() {
     value = document.getElementById("preview")
-    console.log(value)
+    
     input = document.getElementById("hidden-input")
-    input.setAttribute('value', value)
+    input.value = value.innerHTML
+    console.log(input)
 }
