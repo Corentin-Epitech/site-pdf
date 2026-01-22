@@ -1,16 +1,60 @@
-<?php
-    require 'vendor/autoload.php';
+hr {
+    border: 2px solid rgb(0, 0, 0);
+}
 
-    use Dompdf\Dompdf;
-    use Dompdf\Options;
+label {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+input {
+    border-radius: 20px;
+    border: 2px solid gray ;
+}
+
+textarea {
+    border-radius: 20px;
+    border: 2px solid gray ;
+}
+
+button {
+    border-radius: 20px;
+    border: 2px solid gray ;
+}
+
+select {
+    border-radius: 20px;
+    border: 2px solid gray ;
+}
+
+.exp .container {
+    display: grid;
+    grid-template-columns: repeat(2, 3fr);
+}
 
 
+.formations .container {
+    display: grid;
+    grid-template-columns: repeat(2, 3fr);
+}
+
+input {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+textarea {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+button {
+    margin-top: 5px;
+    margin-bottom: 5px;
     
-    $options = new Options();
-    $options->set('isRemoteEnabled',true);
-    $pdf = new Dompdf($options) ;
+}
 
-    $html = "<html><head><style> #preview {
+#preview {
     padding: 0px;
     width: 594px;
     height: 841px;
@@ -137,11 +181,4 @@
 #preview-formations p {
     display: block;
     font-size: 20px;
-} </style> </head> <body>" . $_POST['test'] . "</body></html";
-     
-    // echo $html;
-    $pdf -> loadHtml($html);
-    $pdf -> setPaper('A4', 'Portrait') ;
-    $pdf -> render() ; 
-    $pdf -> stream() ; 
-?>
+}
