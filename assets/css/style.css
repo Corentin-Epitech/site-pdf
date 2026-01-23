@@ -54,7 +54,23 @@ button {
     
 }
 
-#preview {
+label {
+  display: block;
+}
+
+label:not(.error)>.formError {
+  display: none;
+}
+
+label>.formError {
+  color: red;
+  font-weight: bold;
+  padding-left: 1em;
+}
+
+
+
+/* #preview {
     padding: 0px;
     width: 594px;
     height: 841px;
@@ -181,4 +197,4 @@ button {
 #preview-formations p {
     display: block;
     font-size: 20px;
-}
+} */
