@@ -17,34 +17,32 @@
 </header>
 
 <body class="">
-    <div id="form" class=" form container ">
+    <div id="form" class="form container">
         <form action="export.php" method="post" class="row">
             <div class="input-bloc shadow-lg col border bg-light ms-3 me-3 gy-3">
                 <div class="info container">
                     <div class="row">
                         <h1>Informations général :</h1>
-                        <label for="nom">Nom:
+                        <label for="nom">Nom:</label>
                         <input class="nom" id="nom" type="text" name="nom"
-                            oninput="document.getElementById('nom-preview').innerHTML = this.value" maxlength="20" required data-errorfieldname="Password">
-                            <span class="formError"></span>
-                        </label>
+                            oninput="document.getElementById('nom-preview').innerHTML = this.value" maxlength="20" required>
                         <label for="prenom">Prénom:</label>
                         <input class="prenom" id="prenom" type="text" name="prenom"
-                            oninput="document.getElementById('prenom-preview').innerHTML = this.value" maxlength="20">
+                            oninput="document.getElementById('prenom-preview').innerHTML = this.value" maxlength="20" required>
                         <label for="title">Intitulé:</label>
                         <input class="title" id="title" type="text" name="title"
-                            oninput="document.getElementById('title-preview').innerHTML = this.value" maxlength="30">
+                            oninput="document.getElementById('title-preview').innerHTML = this.value" maxlength="30" required>
                         <label for="mail">Email:</label>
                         <input class="mail" id="mail" type="email" name="mail"
-                            oninput="document.getElementById('mail-preview').innerHTML = this.value" maxlength="100"
-                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                            oninput="document.getElementById('mail-preview').innerHTML = this.value" oninvalid="alert('Vous devez rentrer un email valide')" maxlength="100"
+                             required>
                         <label for="phone">Téléphone:</label>
                         <input class="phone" id="phone" type="tel" name="phone"
-                            oninput="document.getElementById('tel-preview').innerHTML = this.value" maxlength="20">
+                            oninput="document.getElementById('tel-preview').innerHTML = this.value" pattern="[0-9]*" oninvalid="alert('Vous devez rentrer un numéro de téléphone valide')" maxlength="20" required>
                         <label for="desc">Description:</label>
                         <textarea class="desc" id="desc" name="desc"
                             oninput="document.getElementById('desc-preview').innerHTML = this.value"
-                            maxlength="200"></textarea>
+                            maxlength="200" required></textarea>
                     </div>
                 </div>
                 <hr>
@@ -107,7 +105,7 @@
                         <button type="button" onclick="addForm()">Ajouter</button>
                     </div>
                 </div>
-                <button class="submit" onclick="addValue()">Valider</button>
+                <button id="submit" class="submit" type="submit" onclick="validateForm()">Valider</button>
             </div>
 
             <input type="hidden" name="test" id="hidden-input">

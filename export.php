@@ -10,9 +10,6 @@
     $options->set('isRemoteEnabled',true);
     $pdf = new Dompdf($options) ;
 
-   
-     
-    // echo $html;
     $pdf -> loadHtml($_POST['test']);
     $pdf -> setPaper('A4', 'Portrait') ;
     $pdf -> render() ; 

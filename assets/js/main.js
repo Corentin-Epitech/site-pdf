@@ -69,6 +69,7 @@ function addComp() {
     button.onclick = function() {box = document.getElementsByClassName(this.parentNode.className); Array.from(box).forEach(function (item) {item.remove()}) }
     newDiv.appendChild(button)
     parentDiv.appendChild(newDiv)
+    
     }
 
     else {
@@ -359,51 +360,84 @@ function addForm() {
 }
 
 
+
 function addValue() {
     value = document.getElementById("preview")
     
     input = document.getElementById("hidden-input")
     input.value = value.innerHTML
-    console.log(input)
 }
 
-document.querySelectorAll("input").forEach(function(element) {
-  element.addEventListener("blur", function() {
-    validateField(this)
-  });
-});
-
-document.querySelectorAll("button").forEach(function(element) {
-  element.addEventListener("submit", function(event) {
-    let isNotValid = false;
-    //Go through each of the input element
-    this.querySelectorAll("input").forEach(function(input) {
-      //Validate the input and set the isNotValid flg
-      if (validateField(input) && !isNotValid) {
-        isNotValid = true;
-      }
-    });
-
-    //Stop the form submit if not valid
-    if (isNotValid) {    
-      event.preventDefault();
-    }
-  });
-});
-
-//Main Validation Funtion
-function validateField(field) {
-  let attributes = field.getAttributeNames();
-  let parent = field.parentNode
-  let errorField = parent.querySelector(".formError");
-
-  let isError = false;
-  //Required Vlidation
-  if (attributes.includes("required") && field.value === "") {
-    errorField.textContent = `The ${field.dataset.errorfieldname} field is required`;
-    isError = true;
-  } 
-
-  parent.classList.toggle("error", isError);
-  return isError;
+function validateForm() {
+    document.querySelectorAll("[required]").forEach(function(element) {
+        console.log(element)
+        x = element.value;
+        
+        if (x === "") {
+            alert("Aucun champ ne doit être vide");
+        return false;
+        }
+    })
+    addValue()
 }
+
+// function validateForm() {
+//     const array = document.querySelectorAll("input")
+//     console.log(array)
+//     const vide = (element) => element == null;
+//     if (array.some(vide) == true) {
+//         alert("Aucun champ ne doit être vide");
+//         return
+//     }
+//     addValue()
+  
+// }
+
+
+
+// document.querySelectorAll("input").forEach(function(element) {
+//   element.addEventListener("blur", function() {
+//     validateField(this)
+//   });
+// });
+
+// document.querySelectorAll("textarea").forEach(function(element) {
+//   element.addEventListener("blur", function() {
+//     validateField(this)
+//   });
+// });
+
+// document.querySelectorAll("button").forEach(function(element) {
+//   element.addEventListener("submit", function(event) {
+//     let isNotValid = false;
+//     //Go through each of the input element
+//     this.querySelectorAll("input").forEach(function(input) {
+//       //Validate the input and set the isNotValid flg
+//       if (validateField(input) && !isNotValid) {
+//         isNotValid = true;
+//       }
+//     });
+
+//     //Stop the form submit if not valid
+//     if (isNotValid) {    
+//       event.preventDefault();
+//     }
+//   });
+// });
+
+// //Main Validation Funtion
+// function validateField(field) {
+//   let attributes = field.getAttributeNames();
+//   let parent = field.parentNode
+//   let errorField = parent.querySelector(".formError");
+
+//   let isError = false;
+//   //Required Vlidation
+//   if (attributes.includes("required") && field.value === "") {
+//     errorField.textContent = `Le champ ${field.dataset.errorfieldname} ne doit pas être vide !`;
+//     isError = true;
+//   } 
+
+//   parent.classList.toggle("error", isError);
+//   return isError;
+// }
